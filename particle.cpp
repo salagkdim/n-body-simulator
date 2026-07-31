@@ -1,5 +1,10 @@
 #include <iostream>
 #include <cmath>
+#include <fstream>
+
+// step 1: move and print on console
+// step 2: orbit and print on console
+// step 3: positions plotted with python
 
 // struct for body that holds these (for now):
 // x,y (position)
@@ -34,6 +39,10 @@ int main() {
                          // for circular orbit: period T = 2*pi*r/v, here r = 1 and v = 1
                          // r=sqrt((1-0)^2+(0-0)^2)=1,v=sqrt(0^2+1^2)=1
 
+    std::ofstream outfile("orbit.csv");     // create file orbit.csv
+
+    outfile<<"x,y\n";
+
     for(int step = 0; step < numSteps; step++) {
 
         // lets say that the sun coordinates are (0,0) so
@@ -51,7 +60,8 @@ int main() {
         b1.xPos += b1.xVel * dt;
         b1.yPos += b1.yVel * dt;
 
-        std::cout<<"The position is: ("<<b1.xPos<<","<<b1.yPos<<")\n";
+        // std::cout<<"The position is: ("<<b1.xPos<<","<<b1.yPos<<")\n";      this line writes to console so we replace it with
+        outfile<<b1.xPos<<","<<b1.yPos<<"\n";
     }
 
     return 0;
