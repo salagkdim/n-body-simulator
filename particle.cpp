@@ -5,6 +5,7 @@
 // step 1: move and print on console
 // step 2: orbit and print on console
 // step 3: positions plotted with python
+// step 4: n bodies
 
 // struct for body that holds these (for now):
 // x,y (position)

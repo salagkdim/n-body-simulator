@@ -1,3 +1,4 @@
 *.exe 
 *.obj 
-orbit.csv 
+orbit.csv
+nbody.csv
